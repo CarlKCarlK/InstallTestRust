@@ -28,9 +28,9 @@ checksum = "d468802bab17cbc0cc575e9b053f41e72aa36bfa6b7f55e3529ffa43161b97fa"
 
 [[package]]
 name = "bed-reader"
-version = "0.2.13"
+version = "0.2.14"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b56cf32f820c74e110acc63c4bb748f5c46010bb8ef77f0f141dab9f39f216b9"
+checksum = "831eca6bec0f9f0a643be800aa52272aeb07eeab9bcef3d2e8fcf4007913134c"
 dependencies = [
  "approx 0.5.1",
  "byteorder",
@@ -40,7 +40,6 @@ dependencies = [
  "ndarray-npy",
  "num-traits",
  "numpy",
- "pyo3",
  "rayon",
  "statrs",
  "temp_testdir",

@@ -28,5 +28,5 @@ jobs:
         toolchain: stable
         override: true
 
-    - name: Run Rust
+    - name: Run Test Code
       run: cargo run
