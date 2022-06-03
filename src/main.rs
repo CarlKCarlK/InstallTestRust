@@ -1,8 +1,10 @@
+use bed_reader::sample_bed_file;
+
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     use bed_reader::{assert_eq_nan, Bed, ReadOptions};
     use ndarray as nd;
 
-    let file_name = "data/small.bed";
+    let file_name = sample_bed_file("small.bed")?;
     let mut bed = Bed::new(file_name)?;
     let val = ReadOptions::builder().f64().read(&mut bed)?;
 
@@ -17,8 +19,8 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     use ndarray::s;
 
-    let file_name = "data/some_missing.bed";
-    let mut bed = Bed::new(file_name)?;
+    let file_name = sample_bed_file("some_missing.bed")?;
+    let mut bed = Bed::new(&file_name)?;
     let val = ReadOptions::builder()
         .iid_index(s![..;2])
         .sid_index(20..30)
@@ -29,7 +31,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     use std::collections::HashSet;
 
-    let mut bed = Bed::new(file_name)?;
+    let mut bed = Bed::new(&file_name)?;
     println!("{:?}", bed.iid()?.slice(s![..5])); // Outputs ndarray: ["iid_0", "iid_1", "iid_2", "iid_3", "iid_4"]
     println!("{:?}", bed.sid()?.slice(s![..5])); // Outputs ndarray: ["sid_0", "sid_1", "sid_2", "sid_3", "sid_4"]
     println!("{:?}", bed.chromosome()?.iter().collect::<HashSet<_>>());
