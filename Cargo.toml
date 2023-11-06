@@ -5,4 +5,4 @@ edition = "2021"
 
 [dependencies]
 ndarray = "0.15.6"
-bed-reader = "0.2.37"
+bed-reader = "1.0.0-beta.2"
