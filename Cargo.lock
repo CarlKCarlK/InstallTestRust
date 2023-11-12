@@ -86,9 +86,9 @@ checksum = "35636a1494ede3b646cc98f74f8e62c773a38a659ebc777a2cf26b9b74171df9"
 
 [[package]]
 name = "bed-reader"
-version = "1.0.0-beta.2"
+version = "1.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "690d279d0c89986a50f6a1c6cfe6c8886ce578ab2285724003d5226e2309847a"
+checksum = "fa7e7f0cf4fee39af33c76f3c4f0977a117f1af284288ad1afc3fae423e5aa86"
 dependencies = [
  "anyinput",
  "approx 0.5.1",
